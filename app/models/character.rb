@@ -5,6 +5,8 @@ class Character < ApplicationRecord
   has_many :likes, class_name: 'Liked' 
   has_many :users, through: :likes
 
+
+  
   validates :name, presence: true, uniqueness: true
   validates :imageURL, presence: true
 end
