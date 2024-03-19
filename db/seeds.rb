@@ -10,6 +10,7 @@ def fetch_character_data(api_url)
 end
   
 
+
 # Insert character data into characters table
 def insert_character_data(character_data)
     character_data.each do |data|
