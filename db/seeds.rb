@@ -26,7 +26,7 @@ def insert_character_data(character_data)
       end
       data[:videoGames].each do |video_game_name|
         character.video_games.create(name: video_game_name)
-      end
+       end
     end
   end
   
