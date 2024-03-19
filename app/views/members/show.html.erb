@@ -1,0 +1,83 @@
+<div class="container mt-5">
+    <h1 class="display-4 text-center mb-4"><%= @character.name %></h1>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <% if @character.imageURL.present? %>
+                <img src='<%= @character.imageURL %>'  class="img-fluid rounded shadow">
+            <% else %>
+                <div class="p-5 bg-light border rounded text-center">
+                    No Image Available
+                </div>
+            <% end %>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                 <h2 class="card-title">Films</h2>
+                <ul class="list-group list-group-flush">
+                        <% if @films.any? %>
+                            <% @films.each do |film| %>
+                                <li class="list-group-item"><%= film.name %></li>
+                            <% end %>
+                        <% else %>
+                            <li class="list-group-item">No Data Available</li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-4 mt-4">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title">TV Shows</h2>
+                    <ul class="list-group list-group-flush">
+                        <% if @tv_shows.any? %>
+                            <% @tv_shows.each do |tv_show| %>
+                                <li class="list-group-item"><%= tv_show.name %></li>
+                            <% end %>
+                        <% else %>
+                            <li class="list-group-item">No Data Available</li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title">Video Games</h2>
+                    <ul class="list-group list-group-flush">
+                        <% if @video_games.any? %>
+                            <% @video_games.each do |video_game| %>
+                                <li class="list-group-item"><%= video_game.name %></li>
+                            <% end %>
+                        <% else %>
+                            <li class="list-group-item">No Data Available</li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title">Liked By</h2>
+                    <ul class="list-group list-group-flush">
+                        <% if @liking_users.any? %>
+                            <% @liking_users.each do |user| %>
+                                <li class="list-group-item"><%= user.name %></li>
+                            <% end %>
+                        <% else %>
+                            <li class="list-group-item">No Data Available</li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

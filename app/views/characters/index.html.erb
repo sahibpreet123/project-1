@@ -1,0 +1,45 @@
+<div class="container mt-5">
+<%= form_tag(characters_path, method: "get", class: "form-inline my-2 my-lg-0") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Characters", class: "form-control mr-sm-2" %>
+
+  <%= select_tag :category, options_for_select(
+    { 'All' => 'all', 'Movies' => 'films', 'TV Shows' => 'tv_shows', 'Video Games' => 'video_games' },
+    params[:category]
+  ),
+  include_blank: true, class: "form-control mr-sm-2"
+%>
+
+  <%= button_tag(type: "submit", class: "btn btn-outline-success my-2 my-sm-0") do %>
+    Search
+  <% end %>
+
+  <%= link_to "Reset", characters_path, class: "btn btn-outline-secondary my-2 my-sm-0" %>
+<% end %>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image URL</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @characters.empty? %>
+          <tr>
+            <td colspan="3">No characters found.</td>
+          </tr>
+        <% else %>
+          <% @characters.each do |character| %>
+            <tr>
+              <td><%= character.name %></td>
+              <td><img src="<%= character.imageURL %>" alt="<%= character.name %>" class="img-fluid"></td>
+              <td><%= link_to "View", member_path(character), class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= paginate @characters %>
+</div>

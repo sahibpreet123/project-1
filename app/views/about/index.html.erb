@@ -1,0 +1,109 @@
+<div class="container mt-5">
+<h1>About Us</h1>
+<p> We are passionate about Disney characters and wanted to create a platform to explore and learn more about them.</p>
+
+<h2>Data Sources</h2>
+<ul>
+    <li><strong>Disney Character API:</strong> This API provides information about various Disney characters, including their appearances in films, TV shows, and video games. We extract data such as character names, associated media, image URLs, and source URLs.</li>
+    <li><strong>Faker API (User Data):</strong> We utilize the Faker API to generate random user data, including email addresses and names. This data used to create fake users for some personlized experience.</li>
+</ul>
+
+<h2>Database Schema</h2>
+<p>Our database schema is designed to accommodate data from both sources:</p>
+
+<h3>Characters Table</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">imageURL</th>
+      <!-- Add more columns as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Mickey Mouse</td>
+      <td>https://example.com/mickey.jpg</td>
+      <!-- Add more rows for other characters -->
+    </tr>
+  </tbody>
+</table>
+
+<h3>Films Table</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">charater_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>ABC Movie</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>TV Shows Table</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">charater_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>ABC TV Show</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Video Games Table</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">charater_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>ABC Video Game</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Users Table</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">email</th>
+      <th scope="col">name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>user@example.com</td>
+      <td>John Doe</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Database ERD</h2>
+        <div>
+        <img src="<%= asset_path('ERDiagram.png') %>"  class="img-fluid">
+        </div>
+</div>
