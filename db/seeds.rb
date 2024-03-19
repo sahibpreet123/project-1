@@ -28,7 +28,7 @@ def insert_character_data(character_data)
         character.video_games.create(name: video_game_name)
        end
      end
-  end
+   end
   
 
 # Generate random user data and insert into users table
